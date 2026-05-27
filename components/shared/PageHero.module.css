@@ -1,0 +1,42 @@
+.hero {
+  padding-block: clamp(3rem, 8vw, 5rem);
+  border-bottom: 1px solid var(--color-border);
+  background: linear-gradient(
+    180deg,
+    var(--color-primary-subtle) 0%,
+    var(--color-bg-elevated) 100%
+  );
+  border-top: 3px solid var(--color-primary);
+}
+
+.title {
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  margin-top: 0.75rem;
+  max-width: 20ch;
+}
+
+.lead {
+  margin-top: 1.25rem;
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  max-width: 55ch;
+}
+
+.quote {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.quote footer {
+  margin-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  color: var(--color-text-subtle);
+}

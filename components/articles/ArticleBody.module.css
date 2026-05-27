@@ -1,0 +1,27 @@
+.body {
+  margin-top: 2.5rem;
+}
+
+.disclaimer {
+  padding: 1.25rem 1.5rem;
+  margin-block: 2rem;
+  background: var(--color-accent-muted);
+  border-left: 3px solid var(--color-accent);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.placeholder {
+  padding: 1.5rem;
+  margin-block: 2rem;
+  background: var(--color-bg-muted);
+  border: 1px dashed var(--color-border-strong);
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.placeholderLabel {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}

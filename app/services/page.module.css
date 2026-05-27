@@ -1,0 +1,36 @@
+.list {
+  padding-block: var(--space-section);
+}
+
+.item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.item a {
+  display: block;
+  padding-block: 2.5rem;
+  transition: background 0.2s;
+}
+
+.item a:hover {
+  background: var(--color-bg-elevated);
+}
+
+.item h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.75rem;
+}
+
+.item p {
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  margin-bottom: 1rem;
+}
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}

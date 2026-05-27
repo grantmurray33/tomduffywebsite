@@ -1,0 +1,48 @@
+.content {
+  padding-block: var(--space-section);
+}
+
+.notice {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  background: var(--color-accent-muted);
+  border-left: 3px solid var(--color-accent);
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.intro {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.details {
+  display: grid;
+  gap: 2rem;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  margin-bottom: 0.5rem;
+}
+
+.value {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-accent);
+}
+
+.value:hover {
+  color: var(--color-accent-hover);
+}
+
+@media (min-width: 640px) {
+  .details {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -1,0 +1,19 @@
+.content {
+  padding-block: var(--space-section);
+}
+
+.subheading {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.highlights {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--color-text-muted);
+}
+
+.highlights li {
+  margin-bottom: 0.625rem;
+}
