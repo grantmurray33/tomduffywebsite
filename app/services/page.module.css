@@ -8,29 +8,40 @@
 
 .item a {
   display: block;
-  padding-block: 2.5rem;
-  transition: background 0.2s;
+  padding-block: 3rem;
+  transition:
+    background var(--transition-base),
+    padding-left var(--transition-base);
 }
 
 .item a:hover {
   background: var(--color-bg-elevated);
+  padding-left: 1rem;
 }
 
 .item h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  margin-bottom: 0.75rem;
+  font-size: clamp(1.625rem, 3vw, 2.125rem);
+  font-weight: 400;
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.02em;
 }
 
 .item p {
   color: var(--color-text-muted);
-  max-width: 60ch;
-  margin-bottom: 1rem;
+  max-width: 58ch;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
 }
 
 .link {
-  font-size: 0.875rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  color: var(--color-gold);
+  transition: color var(--transition-base);
+}
+
+.item a:hover .link {
   color: var(--color-accent);
 }

@@ -1,19 +1,20 @@
 .body {
-  margin-top: 2.5rem;
+  margin-top: 3rem;
 }
 
 .disclaimer {
-  padding: 1.25rem 1.5rem;
-  margin-block: 2rem;
-  background: var(--color-accent-muted);
-  border-left: 3px solid var(--color-accent);
+  padding: 1.375rem 1.625rem;
+  margin-block: 2.5rem;
+  background: linear-gradient(135deg, var(--color-accent-muted) 0%, rgba(184, 149, 106, 0.08) 100%);
+  border-left: 2px solid var(--color-gold);
   font-size: 0.9375rem;
+  line-height: 1.65;
   color: var(--color-text-muted);
 }
 
 .placeholder {
-  padding: 1.5rem;
-  margin-block: 2rem;
+  padding: 1.625rem;
+  margin-block: 2.5rem;
   background: var(--color-bg-muted);
   border: 1px dashed var(--color-border-strong);
   font-size: 0.9375rem;

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import { firm, homeHeroSlides } from '@/content/site';
@@ -34,8 +35,17 @@ export function HeroCarousel() {
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
     >
-      <div className={styles.backdrop} aria-hidden />
-      <div className={styles.pattern} aria-hidden />
+      <div className={styles.background} aria-hidden>
+        <Image
+          src="/beach.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={styles.backgroundImage}
+        />
+        <div className={styles.overlay} />
+      </div>
 
       <div className={`container ${styles.inner}`}>
         <p className={styles.firmName}>{firm.shortName}</p>

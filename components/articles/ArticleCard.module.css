@@ -1,20 +1,28 @@
 .card {
-  padding-block: 2rem;
+  padding-block: 2.5rem;
   border-bottom: 1px solid var(--color-border);
+  transition: padding var(--transition-base);
+}
+
+.card:hover {
+  padding-left: 0.75rem;
 }
 
 .date {
   display: block;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--color-text-subtle);
-  margin-bottom: 0.75rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.875rem;
 }
 
 .title {
-  font-size: clamp(1.375rem, 3vw, 1.75rem);
-  margin-bottom: 0.75rem;
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-weight: 400;
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.02em;
 }
 
 .title a:hover {
@@ -23,17 +31,19 @@
 
 .excerpt {
   font-size: 1rem;
+  line-height: 1.7;
   color: var(--color-text-muted);
-  margin-bottom: 1rem;
-  max-width: 65ch;
+  margin-bottom: 1.25rem;
+  max-width: 62ch;
 }
 
 .link {
-  font-size: 0.875rem;
+  font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-gold);
+  transition: color var(--transition-base);
 }
 
 .link:hover {

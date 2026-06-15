@@ -1,42 +1,70 @@
 .hero {
-  padding-block: clamp(3rem, 8vw, 5rem);
+  padding-block: clamp(4rem, 10vw, 6rem);
   border-bottom: 1px solid var(--color-border);
-  background: linear-gradient(
-    180deg,
-    var(--color-primary-subtle) 0%,
-    var(--color-bg-elevated) 100%
-  );
-  border-top: 3px solid var(--color-primary);
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 0%, rgba(184, 149, 106, 0.07), transparent),
+    linear-gradient(180deg, var(--color-primary-subtle) 0%, var(--color-bg-elevated) 100%);
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-line);
 }
 
 .title {
-  font-size: clamp(2.25rem, 5vw, 3.25rem);
-  margin-top: 0.75rem;
-  max-width: 20ch;
+  font-size: clamp(2.5rem, 5.5vw, 3.75rem);
+  font-weight: 300;
+  margin-top: 1rem;
+  max-width: 18ch;
+  letter-spacing: -0.03em;
 }
 
 .lead {
-  margin-top: 1.25rem;
-  font-size: 1.125rem;
+  margin-top: 1.5rem;
+  font-size: 1.1875rem;
+  line-height: 1.7;
   color: var(--color-text-muted);
-  max-width: 55ch;
+  max-width: 50ch;
 }
 
 .quote {
-  margin-top: 2rem;
-  padding-top: 2rem;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
   border-top: 1px solid var(--color-border);
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 300;
   font-style: italic;
+  line-height: 1.55;
   color: var(--color-text-muted);
+  position: relative;
+}
+
+.quote::before {
+  content: '\201C';
+  position: absolute;
+  top: 1.75rem;
+  left: -0.125rem;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-gold);
+  opacity: 0.35;
+  font-style: normal;
 }
 
 .quote footer {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
+  font-size: 0.6875rem;
   font-style: normal;
-  letter-spacing: 0.02em;
-  color: var(--color-text-subtle);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
 }

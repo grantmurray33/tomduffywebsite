@@ -3,8 +3,10 @@
 }
 
 .subheading {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.375rem;
+  font-weight: 400;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.01em;
 }
 
 .highlights {
@@ -12,8 +14,13 @@
   padding-left: 1.5rem;
   margin-bottom: 2.5rem;
   color: var(--color-text-muted);
+  line-height: 1.7;
 }
 
 .highlights li {
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.75rem;
+}
+
+.highlights li::marker {
+  color: var(--color-gold);
 }
