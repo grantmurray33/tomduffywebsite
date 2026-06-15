@@ -59,8 +59,7 @@
 
 .slides {
   position: relative;
-  min-height: clamp(20rem, 45vw, 24rem);
-  overflow: hidden;
+  min-height: clamp(26rem, 58vw, 34rem);
 }
 
 .slide,
@@ -76,12 +75,14 @@
     opacity var(--transition-slow),
     transform var(--transition-slow);
   pointer-events: none;
+  z-index: 0;
 }
 
 .slideActive {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -119,6 +120,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
+}
+
+.actions :global(.btn--light) {
+  color: var(--color-primary-dark);
+}
+
+.actions :global(.btn--outline-light) {
+  color: #fff;
 }
 
 .controls {
