@@ -61,6 +61,8 @@ export const homeHeroSlides = [
     description:
       'Specialized guidance for bona fide residency, U.S. federal compliance, and Puerto Rico incentive planning — from one of the few firms focused on this complex intersection.',
     cta: { label: 'Puerto Rico services', href: '/services/puerto-rico-tax-planning' },
+    image: '/images/hero/hero-puerto-rico.jpg',
+    imagePosition: 'center 40%',
   },
   {
     id: 'tax-minimization',
@@ -69,6 +71,8 @@ export const homeHeroSlides = [
     description:
       'Creative planning and consulting for domestic and international tax minimization — tailored strategies for high-net-worth individuals and businesses.',
     cta: { label: 'Explore our services', href: '/services' },
+    image: '/images/hero/hero-tax-planning.jpg',
+    imagePosition: 'center 50%',
   },
   {
     id: 'wealth-preservation',
@@ -77,7 +81,16 @@ export const homeHeroSlides = [
     description:
       'We guide clients through wealth preservation techniques, compliance, and representation — with deep expertise in U.S. tax obligations at home and abroad.',
     cta: { label: 'About the firm', href: '/about' },
+    image: '/images/hero/hero-wealth.jpg',
+    imagePosition: 'center 45%',
   },
+] as const;
+
+export const firmAffiliations = [
+  { abbr: 'CPA', label: 'Certified Public Accountant' },
+  { abbr: 'AICPA', label: 'American Institute of CPAs' },
+  { abbr: 'PR CPA', label: 'Puerto Rico Society of CPAs' },
+  { abbr: 'IL · FL', label: 'Licensed in Illinois & Florida' },
 ] as const;
 
 export const homeServiceCards = [

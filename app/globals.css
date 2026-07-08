@@ -33,7 +33,7 @@
   --font-serif: var(--font-serif-loaded), 'Cormorant Garamond', 'Georgia', serif;
   --font-sans: var(--font-sans-loaded), 'Source Sans 3', system-ui, sans-serif;
   --max-width: 76rem;
-  --max-width-narrow: 42rem;
+  --max-width-narrow: min(48rem, 75ch);
   --header-height: 5.25rem;
   --space-section: clamp(5.5rem, 11vw, 8.5rem);
   --radius-sm: 4px;
@@ -49,8 +49,14 @@
     0 4px 8px rgba(15, 61, 71, 0.06),
     0 24px 64px rgba(15, 61, 71, 0.16);
   --shadow-glow: 0 0 0 1px rgba(184, 149, 106, 0.12);
+  --transition-fast: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
   --transition-base: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
   --transition-slow: 0.65s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --prose-max-width: 68ch;
+  --heading-1: clamp(2.25rem, 5vw, 3.75rem);
+  --heading-2: clamp(1.75rem, 3.5vw, 2.75rem);
+  --heading-3: clamp(1.25rem, 2.5vw, 1.5rem);
+  --letter-label: 0.14em;
   --accent-line: linear-gradient(
     90deg,
     var(--color-gold) 0%,
@@ -135,7 +141,7 @@ ol {
   display: inline-block;
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--letter-label);
   text-transform: uppercase;
   color: var(--color-gold);
 }
@@ -170,6 +176,10 @@ h4 {
   font-size: 1.25rem;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
+}
+
+.prose {
+  max-width: var(--prose-max-width);
 }
 
 .prose p {

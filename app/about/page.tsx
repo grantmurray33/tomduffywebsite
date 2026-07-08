@@ -1,5 +1,6 @@
 import { AboutProfile } from '@/components/about/AboutProfile';
 import { CtaBlock } from '@/components/shared/CtaBlock';
+import { TrustBadges } from '@/components/shared/TrustBadges';
 import { aboutFirm, firm } from '@/content/site';
 import { buildMetadata } from '@/lib/metadata';
 import styles from './page.module.css';
@@ -28,6 +29,7 @@ export default function AboutPage() {
           </h2>
           <p className={styles.paragraph}>{aboutFirm.intro}</p>
           <p className={styles.paragraph}>{aboutFirm.experience}</p>
+          <TrustBadges className={styles.badges} />
           <p className={styles.belief}>
             We believe that today there are many individuals and companies
             involved in complicated and technical tax matters that require

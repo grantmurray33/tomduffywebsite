@@ -20,6 +20,7 @@ export default function ArticlesPage() {
       <PageHero
         eyebrow="Insights"
         title="Articles"
+        variant="articles"
         quote={articlesQuote}
       />
 

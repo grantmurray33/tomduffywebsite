@@ -19,6 +19,10 @@
   }
 }
 
+.figureWrap {
+  width: 100%;
+}
+
 .figure {
   margin: 0;
   width: 100%;
@@ -68,7 +72,13 @@
   display: block;
   border-radius: calc(var(--radius-md) - 6px);
   object-fit: cover;
+  object-position: center 15%;
   aspect-ratio: 3 / 4;
+  filter: contrast(1.04) saturate(0.95);
+}
+
+.badges {
+  margin-bottom: 1.5rem;
 }
 
 .caption {
@@ -108,7 +118,7 @@
 }
 
 .title {
-  font-size: clamp(2rem, 4.5vw, 2.875rem);
+  font-size: var(--heading-2);
   font-weight: 300;
   margin-top: 1rem;
   margin-bottom: 1.5rem;

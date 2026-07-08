@@ -13,7 +13,7 @@ export const metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Contact Us" />
+      <PageHero eyebrow="Contact" title="Contact Us" variant="contact" />
 
       <section className={styles.content}>
         <div className="container container--narrow">

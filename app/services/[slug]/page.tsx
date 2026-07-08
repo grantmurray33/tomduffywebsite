@@ -36,6 +36,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         eyebrow="Services"
         title={service.title}
         lead={service.overview}
+        variant="services"
       />
 
       <section className={styles.content}>

@@ -35,69 +35,83 @@ export function HeroCarousel() {
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
     >
-      <div className={styles.background} aria-hidden>
-        <Image
-          src="/beach.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className={styles.backgroundImage}
-        />
-        <div className={styles.overlay} />
-      </div>
-
       <div className={`container ${styles.inner}`}>
-        <p className={styles.firmName}>{firm.shortName}</p>
-
-        <div className={styles.slides}>
-          {homeHeroSlides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={
-                index === active ? styles.slideActive : styles.slide
-              }
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`${index + 1} of ${homeHeroSlides.length}`}
-              aria-hidden={index !== active}
-            >
-              <p className={styles.eyebrow}>{slide.eyebrow}</p>
-              <h1 className={styles.headline}>{slide.headline}</h1>
-              <p className={styles.description}>{slide.description}</p>
-              <div className={styles.actions}>
-                <Link href={slide.cta.href} className="btn btn--light">
-                  {slide.cta.label}
-                </Link>
-                <Link href="/contact" className="btn btn--outline-light">
-                  Contact us
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.controls}>
-          <div
-            className={styles.dots}
-            role="tablist"
-            aria-label="Hero slides"
-          >
+        <div className={styles.frame}>
+          <div className={styles.backgrounds} aria-hidden>
             {homeHeroSlides.map((slide, index) => (
-              <button
+              <div
                 key={slide.id}
-                type="button"
-                role="tab"
-                aria-selected={index === active}
-                aria-label={`Show: ${slide.eyebrow}`}
                 className={
-                  index === active ? styles.dotActive : styles.dot
+                  index === active ? styles.backgroundActive : styles.background
                 }
-                onClick={() => goTo(index)}
-              />
+              >
+                <Image
+                  src={slide.image}
+                  alt=""
+                  fill
+                  priority={index === 0}
+                  sizes="(max-width: 768px) 100vw, 76rem"
+                  className={styles.backgroundImage}
+                  style={{ objectPosition: slide.imagePosition }}
+                />
+              </div>
             ))}
+            <div className={styles.overlay} />
           </div>
-          <p className={styles.tagline}>{firm.tagline}</p>
+
+          <div className={styles.content}>
+            <p className={styles.firmName}>{firm.shortName}</p>
+
+            <div className={styles.slides}>
+              {homeHeroSlides.map((slide, index) => (
+                <div
+                  key={slide.id}
+                  className={
+                    index === active ? styles.slideActive : styles.slide
+                  }
+                  role="group"
+                  aria-roledescription="slide"
+                  aria-label={`${index + 1} of ${homeHeroSlides.length}`}
+                  aria-hidden={index !== active}
+                >
+                  <p className={styles.eyebrow}>{slide.eyebrow}</p>
+                  <h1 className={styles.headline}>{slide.headline}</h1>
+                  <p className={styles.description}>{slide.description}</p>
+                  <div className={styles.actions}>
+                    <Link href={slide.cta.href} className="btn btn--light">
+                      {slide.cta.label}
+                    </Link>
+                    <Link href="/contact" className="btn btn--outline-light">
+                      Contact us
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.controls}>
+              <div
+                className={styles.dots}
+                role="tablist"
+                aria-label="Hero slides"
+              >
+                {homeHeroSlides.map((slide, index) => (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={index === active}
+                    aria-label={`Show: ${slide.eyebrow}`}
+                    className={
+                      index === active ? styles.dotActive : styles.dot
+                    }
+                    onClick={() => goTo(index)}
+                  />
+                ))}
+              </div>
+              <p className={styles.tagline}>{firm.tagline}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -18,6 +18,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Practice areas"
         title="Services"
+        variant="services"
         lead="We focus on guiding clients through complex tax planning, compliance, and wealth preservation strategies tailored to each client's circumstances."
       />
 

@@ -28,7 +28,8 @@ export function ArticleBody({ blocks }: ArticleBodyProps) {
           case 'disclaimer':
             return (
               <aside key={index} className={styles.disclaimer} role="note">
-                {block.text}
+                <p className={styles.disclaimerLabel}>Important notice</p>
+                <p>{block.text}</p>
               </aside>
             );
           case 'placeholder':

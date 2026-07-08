@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArticleBody } from '@/components/articles/ArticleBody';
+import { ReadingProgress } from '@/components/articles/ReadingProgress';
 import { RelatedArticles } from '@/components/articles/RelatedArticles';
 import { CtaBlock } from '@/components/shared/CtaBlock';
 import { ArticleJsonLd } from '@/components/seo/JsonLd';
@@ -10,6 +11,10 @@ import {
   getRelatedArticles,
 } from '@/lib/articles';
 import { buildMetadata } from '@/lib/metadata';
+import {
+  estimateReadingTime,
+  formatReadingTime,
+} from '@/lib/reading-time';
 import styles from './page.module.css';
 
 interface ArticlePageProps {
@@ -38,6 +43,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   if (!article) notFound();
 
   const related = getRelatedArticles(article.relatedSlugs);
+  const readingMinutes = estimateReadingTime(article.content);
   const date = new Date(article.publishedAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
@@ -47,6 +53,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   return (
     <>
       <ArticleJsonLd article={article} />
+      <ReadingProgress />
 
       <article>
         <header className={styles.header}>
@@ -54,9 +61,17 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <Link href="/articles" className={styles.back}>
               ← All articles
             </Link>
-            <time className={styles.date} dateTime={article.publishedAt}>
-              {date}
-            </time>
+            <div className={styles.meta}>
+              <time className={styles.date} dateTime={article.publishedAt}>
+                {date}
+              </time>
+              <span className={styles.metaDivider} aria-hidden>
+                ·
+              </span>
+              <span className={styles.readingTime}>
+                {formatReadingTime(readingMinutes)}
+              </span>
+            </div>
             <h1 className={styles.title}>{article.title}</h1>
             {article.contentStatus === 'needs_migration' && (
               <p className={styles.migrationNote} role="status">

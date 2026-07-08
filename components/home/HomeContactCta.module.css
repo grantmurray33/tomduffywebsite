@@ -47,14 +47,14 @@
 .eyebrow {
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--letter-label);
   text-transform: uppercase;
   color: var(--color-gold-muted);
   margin-bottom: 1rem;
 }
 
 .title {
-  font-size: clamp(2rem, 4.5vw, 2.875rem);
+  font-size: var(--heading-2);
   font-weight: 300;
   color: #fff;
   margin-bottom: 1.25rem;
@@ -67,6 +67,24 @@
   max-width: 44ch;
   line-height: 1.7;
   font-size: 1.0625rem;
+}
+
+.badges {
+  margin-bottom: 1.5rem;
+}
+
+.badges :global(.badge) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(184, 149, 106, 0.25);
+  box-shadow: none;
+}
+
+.badges :global(.abbr) {
+  color: var(--color-gold-muted);
+}
+
+.badges :global(.label) {
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .notice {

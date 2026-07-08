@@ -26,7 +26,7 @@
 }
 
 .title {
-  font-size: clamp(2rem, 4.5vw, 2.875rem);
+  font-size: var(--heading-2);
   font-weight: 300;
   margin-top: 1rem;
   margin-bottom: 1.25rem;

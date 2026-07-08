@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getAllArticles } from '@/lib/articles';
+import { RevealOnScroll } from '@/components/shared/RevealOnScroll';
 import styles from './FeaturedArticles.module.css';
 
 const FEATURED_COUNT = 3;
@@ -10,7 +11,7 @@ export function FeaturedArticles() {
   return (
     <section className={styles.section} aria-labelledby="featured-articles-heading">
       <div className="container">
-        <div className={styles.header}>
+        <RevealOnScroll className={styles.header}>
           <div>
             <p className="eyebrow">Tax insights</p>
             <h2 id="featured-articles-heading" className={styles.title}>
@@ -20,16 +21,16 @@ export function FeaturedArticles() {
           <Link href="/articles" className={styles.viewAll}>
             View all articles
           </Link>
-        </div>
+        </RevealOnScroll>
 
         <ul className={styles.grid}>
-          {featured.map((article) => {
+          {featured.map((article, index) => {
             const date = new Date(article.publishedAt).toLocaleDateString(
               'en-US',
               { year: 'numeric', month: 'long', day: 'numeric' },
             );
             return (
-              <li key={article.slug}>
+              <RevealOnScroll key={article.slug} as="li" delay={index * 80}>
                 <article className={styles.card}>
                   <time dateTime={article.publishedAt} className={styles.date}>
                     {date}
@@ -42,7 +43,7 @@ export function FeaturedArticles() {
                     Read article
                   </Link>
                 </article>
-              </li>
+              </RevealOnScroll>
             );
           })}
         </ul>

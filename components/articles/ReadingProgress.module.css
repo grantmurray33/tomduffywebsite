@@ -1,0 +1,16 @@
+.track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 200;
+  background: rgba(221, 216, 208, 0.4);
+  pointer-events: none;
+}
+
+.bar {
+  height: 100%;
+  background: var(--accent-line);
+  transition: width 0.15s ease-out;
+}

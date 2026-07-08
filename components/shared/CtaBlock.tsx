@@ -11,9 +11,8 @@ export function CtaBlock() {
             How can we help you?
           </h2>
           <p className={styles.text}>
-            We strive to assist our clients in understanding the morass of
-            constantly changing state, local, and international tax laws and
-            regulations.
+            Whether you are navigating Puerto Rico incentive planning, international
+            tax compliance, or a complex IRS matter, we are here to advise.
           </p>
         </div>
         <div className={styles.actions}>

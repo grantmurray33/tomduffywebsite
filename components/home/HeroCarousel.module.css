@@ -1,51 +1,108 @@
 .hero {
   position: relative;
-  min-height: clamp(36rem, 90vh, 46rem);
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  padding-block: clamp(1.5rem, 4vw, 2.5rem);
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184, 149, 106, 0.05), transparent),
+    var(--color-bg);
   color: var(--color-text-on-dark);
 }
 
-.background {
+.inner {
+  width: 100%;
+}
+
+.frame {
+  position: relative;
+  min-height: clamp(34rem, 82vh, 44rem);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(184, 149, 106, 0.22);
+  background: var(--color-primary-dark);
+}
+
+.frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 2px;
+  background: var(--accent-line);
+  opacity: 0.7;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.backgrounds {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: var(--color-primary-dark);
+}
+
+.background,
+.backgroundActive {
+  position: absolute;
+  inset: -8px;
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.backgroundActive {
+  opacity: 1;
+  z-index: 1;
 }
 
 .backgroundImage {
   object-fit: cover;
-  object-position: center 35%;
-  transform: scale(1.02);
+  filter: blur(3px) brightness(0.55) saturate(0.85);
+  transform: scale(1.1);
+  transition: transform 8s ease-out;
+}
+
+.backgroundActive .backgroundImage {
+  transform: scale(1.04);
 }
 
 .overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background:
     linear-gradient(
       105deg,
-      rgba(8, 32, 38, 0.92) 0%,
-      rgba(8, 32, 38, 0.82) 45%,
-      rgba(8, 32, 38, 0.55) 100%
+      rgba(8, 32, 38, 0.88) 0%,
+      rgba(8, 32, 38, 0.78) 45%,
+      rgba(8, 32, 38, 0.62) 100%
     ),
-    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(184, 149, 106, 0.08), transparent);
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(184, 149, 106, 0.06), transparent);
 }
 
 .overlay::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 70%, rgba(8, 32, 38, 0.4) 100%);
+  background: linear-gradient(180deg, transparent 65%, rgba(8, 32, 38, 0.55) 100%);
   pointer-events: none;
 }
 
-.inner {
+.content {
   position: relative;
   z-index: 2;
-  padding-block: clamp(4rem, 10vw, 6rem);
-  width: 100%;
+  padding: clamp(2.5rem, 6vw, 4rem);
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
 }
 
 .firmName {
@@ -59,7 +116,8 @@
 
 .slides {
   position: relative;
-  min-height: clamp(26rem, 58vw, 34rem);
+  flex: 1;
+  min-height: clamp(22rem, 50vw, 30rem);
 }
 
 .slide,
@@ -89,7 +147,7 @@
   display: inline-block;
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--letter-label);
   text-transform: uppercase;
   color: var(--color-gold-muted);
   margin-bottom: 1.25rem;
@@ -99,7 +157,7 @@
 }
 
 .headline {
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-size: var(--heading-1);
   font-weight: 300;
   line-height: 1.06;
   max-width: 16ch;
@@ -109,7 +167,7 @@
 }
 
 .description {
-  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.7;
   color: var(--color-text-on-dark-muted);
   max-width: 48ch;
@@ -131,7 +189,7 @@
 }
 
 .controls {
-  margin-top: clamp(3rem, 6vw, 4rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
   padding-top: 2.25rem;
   border-top: 1px solid rgba(184, 149, 106, 0.2);
   display: flex;
@@ -183,4 +241,48 @@
   color: rgba(255, 255, 255, 0.65);
   max-width: 40ch;
   letter-spacing: 0.01em;
+}
+
+@media (max-width: 375px) {
+  .hero {
+    padding-block: 1rem;
+  }
+
+  .frame {
+    border-radius: var(--radius-md);
+    min-height: clamp(30rem, 88vh, 38rem);
+  }
+
+  .content {
+    padding: 1.75rem;
+  }
+
+  .slides {
+    min-height: clamp(20rem, 65vw, 26rem);
+  }
+
+  .headline {
+    max-width: 14ch;
+    font-size: clamp(2rem, 9vw, 2.5rem);
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .actions {
+    gap: 0.875rem;
+  }
+
+  .actions :global(.btn) {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.6875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backgroundImage {
+    filter: brightness(0.55) saturate(0.85);
+  }
 }

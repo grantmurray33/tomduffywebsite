@@ -7,13 +7,19 @@ export function Footer() {
 
   return (
     <footer className={styles.footer}>
+      <div className="container">
+        <hr className="divider" />
+      </div>
+
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <p className={styles.name}>{firm.name}</p>
           <p className={styles.tagline}>{firm.tagline}</p>
+          <p className={styles.location}>{firm.location}</p>
         </div>
 
         <nav className={styles.nav} aria-label="Footer">
+          <p className={styles.columnLabel}>Navigate</p>
           <ul>
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -24,6 +30,7 @@ export function Footer() {
         </nav>
 
         <div className={styles.contact}>
+          <p className={styles.columnLabel}>Contact</p>
           <a href={firm.phoneHref}>{firm.phone}</a>
           <a href={`mailto:${firm.email}`}>{firm.email}</a>
         </div>

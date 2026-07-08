@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { aboutTom, tomDuffyPhoto } from '@/content/site';
+import { RevealOnScroll } from '@/components/shared/RevealOnScroll';
+import { TrustBadges } from '@/components/shared/TrustBadges';
 import styles from './AboutProfile.module.css';
 
 interface AboutProfileProps {
@@ -27,25 +29,27 @@ export function AboutProfile({
     >
       <div className="container">
         <div className={styles.grid}>
-          <figure className={styles.figure}>
-            <div className={styles.frame}>
-              <Image
-                src={tomDuffyPhoto.src}
-                alt={tomDuffyPhoto.alt}
-                width={tomDuffyPhoto.width}
-                height={tomDuffyPhoto.height}
-                className={styles.photo}
-                sizes="(max-width: 768px) 100vw, (max-width: 1100px) 40vw, 360px"
-                priority={variant === 'preview'}
-              />
-            </div>
-            <figcaption className={styles.caption}>
-              <span className={styles.captionName}>{aboutTom.name}</span>
-              <span className={styles.captionRole}>{aboutTom.role}</span>
-            </figcaption>
-          </figure>
+          <RevealOnScroll className={styles.figureWrap}>
+            <figure className={styles.figure}>
+              <div className={styles.frame}>
+                <Image
+                  src={tomDuffyPhoto.src}
+                  alt={tomDuffyPhoto.alt}
+                  width={tomDuffyPhoto.width}
+                  height={tomDuffyPhoto.height}
+                  className={styles.photo}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1100px) 40vw, 360px"
+                  priority={variant === 'preview'}
+                />
+              </div>
+              <figcaption className={styles.caption}>
+                <span className={styles.captionName}>{aboutTom.name}</span>
+                <span className={styles.captionRole}>{aboutTom.role}</span>
+              </figcaption>
+            </figure>
+          </RevealOnScroll>
 
-          <div className={styles.content}>
+          <RevealOnScroll className={styles.content} delay={100}>
             <p className="eyebrow">{eyebrow}</p>
             <h2 id={sectionId} className={styles.title}>
               {title}
@@ -60,6 +64,8 @@ export function AboutProfile({
                 </p>
               ))}
 
+            <TrustBadges className={styles.badges} />
+
             <ul className={styles.credentials} aria-label="Credentials">
               {aboutTom.credentials.map((item) => (
                 <li key={item}>{item}</li>
@@ -71,7 +77,7 @@ export function AboutProfile({
                 About the firm
               </Link>
             )}
-          </div>
+          </RevealOnScroll>
         </div>
       </div>
     </section>

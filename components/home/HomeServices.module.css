@@ -12,7 +12,7 @@
 }
 
 .title {
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: var(--heading-2);
   font-weight: 300;
   margin-top: 1rem;
   margin-bottom: 1.25rem;
@@ -28,6 +28,10 @@
 .grid {
   display: grid;
   gap: 1.5rem;
+}
+
+.grid > :global(li) {
+  height: 100%;
 }
 
 @media (min-width: 640px) {
@@ -54,9 +58,9 @@
   position: relative;
   overflow: hidden;
   transition:
-    border-color var(--transition-base),
-    box-shadow var(--transition-base),
-    transform var(--transition-base);
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .card::before {
@@ -72,9 +76,9 @@
 }
 
 .card:hover {
-  border-color: rgba(184, 149, 106, 0.35);
+  border-color: var(--color-gold);
   box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  transform: translateY(-3px);
 }
 
 .card:hover::before {

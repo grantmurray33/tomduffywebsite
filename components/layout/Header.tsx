@@ -43,12 +43,13 @@ export function Header() {
 
         <button
           type="button"
-          className={styles.toggle}
+          className={`${styles.toggle} ${open ? styles.toggleOpen : ''}`}
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen(!open)}
         >
+          <span />
           <span />
           <span />
         </button>
@@ -64,6 +65,12 @@ export function Header() {
           <Link
             key={link.href}
             href={link.href}
+            className={
+              pathname === link.href ||
+              pathname.startsWith(`${link.href}/`)
+                ? styles.mobileLinkActive
+                : styles.mobileLink
+            }
             onClick={() => setOpen(false)}
           >
             {link.label}

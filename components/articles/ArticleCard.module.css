@@ -1,25 +1,39 @@
 .card {
+  display: block;
   padding-block: 2.5rem;
+  padding-inline: 1rem;
+  margin-inline: -1rem;
   border-bottom: 1px solid var(--color-border);
-  transition: padding var(--transition-base);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    padding-inline var(--transition-fast);
 }
 
 .card:hover {
-  padding-left: 0.75rem;
+  padding-inline: 1.5rem;
+  border-color: transparent;
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  background: var(--color-bg-elevated);
 }
 
 .date {
   display: block;
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--letter-label);
   text-transform: uppercase;
   color: var(--color-gold);
   margin-bottom: 0.875rem;
 }
 
 .title {
-  font-size: clamp(1.5rem, 3vw, 1.875rem);
+  font-size: var(--heading-3);
   font-weight: 400;
   margin-bottom: 0.875rem;
   letter-spacing: -0.02em;
@@ -40,10 +54,10 @@
 .link {
   font-size: 0.6875rem;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: var(--letter-label);
   text-transform: uppercase;
   color: var(--color-gold);
-  transition: color var(--transition-base);
+  transition: color var(--transition-fast);
 }
 
 .link:hover {

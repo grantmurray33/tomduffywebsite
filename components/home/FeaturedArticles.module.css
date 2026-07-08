@@ -19,7 +19,7 @@
 }
 
 .title {
-  font-size: clamp(2rem, 4.5vw, 2.875rem);
+  font-size: var(--heading-2);
   font-weight: 300;
   margin-top: 0.75rem;
   letter-spacing: -0.025em;
@@ -44,9 +44,23 @@
   gap: 1.75rem;
 }
 
+.grid > :global(li) {
+  height: 100%;
+}
+
+.grid > :global(li) .card {
+  height: 100%;
+}
+
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -61,9 +75,9 @@
   position: relative;
   overflow: hidden;
   transition:
-    box-shadow var(--transition-base),
-    transform var(--transition-base),
-    border-color var(--transition-base);
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 .card::before {
@@ -79,7 +93,7 @@
 .card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-3px);
-  border-color: rgba(184, 149, 106, 0.3);
+  border-color: var(--color-gold);
 }
 
 .date {
