@@ -20,6 +20,13 @@ export function HeroCarousel() {
     setActive((prev) => (prev + 1) % homeHeroSlides.length);
   }, []);
 
+  const prev = useCallback(() => {
+    setActive(
+      (prevIndex) =>
+        (prevIndex - 1 + homeHeroSlides.length) % homeHeroSlides.length,
+    );
+  }, []);
+
   useEffect(() => {
     if (paused) return;
     const id = window.setInterval(next, INTERVAL_MS);
@@ -37,6 +44,51 @@ export function HeroCarousel() {
     >
       <div className={`container ${styles.inner}`}>
         <div className={styles.frame}>
+          <button
+            type="button"
+            className={`${styles.arrow} ${styles.arrowPrev}`}
+            onClick={prev}
+            aria-label="Previous slide"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden
+            >
+              <path
+                d="M12.5 4.5L7 10l5.5 5.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+          <button
+            type="button"
+            className={`${styles.arrow} ${styles.arrowNext}`}
+            onClick={next}
+            aria-label="Next slide"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden
+            >
+              <path
+                d="M7.5 4.5L13 10l-5.5 5.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+
           <div className={styles.backgrounds} aria-hidden>
             {homeHeroSlides.map((slide, index) => (
               <div
