@@ -28,7 +28,7 @@ export function AboutProfile({
       aria-labelledby={sectionId}
     >
       <div className="container">
-        <div className={styles.grid}>
+        <div className={`${styles.grid} ${isFull ? styles.gridFull : ''}`}>
           <RevealOnScroll className={styles.figureWrap}>
             <figure className={styles.figure}>
               <div className={styles.frame}>

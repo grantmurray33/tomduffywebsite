@@ -17,6 +17,10 @@
     gap: clamp(3rem, 6vw, 5rem);
     align-items: center;
   }
+
+  .gridFull {
+    align-items: start;
+  }
 }
 
 .figureWrap {
