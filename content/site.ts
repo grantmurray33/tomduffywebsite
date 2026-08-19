@@ -17,7 +17,7 @@ export const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '/articles', label: 'Insights' },
+  { href: '/articles', label: 'Articles' },
   { href: '/contact', label: 'Contact' },
 ] as const;
 
@@ -165,7 +165,7 @@ export const homeServiceCards = [
     icon: 'trust' as const,
   },
   {
-    title: 'Tax Insights & Articles',
+    title: 'Tax Articles',
     description:
       'Technical articles on Puerto Rico, international tax, and U.S. compliance.',
     href: '/articles',

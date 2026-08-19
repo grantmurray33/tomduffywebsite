@@ -18,7 +18,6 @@ export default function ArticlesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Insights"
         title="Articles"
         variant="articles"
         quote={articlesQuote}

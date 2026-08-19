@@ -54,10 +54,10 @@ export default function ServicesPage() {
             </article>
           ))}
 
-          <article id="tax-insights" className={styles.item}>
+          <article id="tax-articles" className={styles.item}>
             <p className={styles.index}>06</p>
             <div className={styles.body}>
-              <h2 className={styles.title}>Tax Insights &amp; Articles</h2>
+              <h2 className={styles.title}>Tax Articles</h2>
               <p className={styles.description}>
                 Technical articles on Puerto Rico, international tax, and U.S.
                 compliance.
@@ -68,7 +68,7 @@ export default function ServicesPage() {
                 on sophisticated federal tax issues encountered in practice.
               </p>
               <Link href="/articles" className={styles.link}>
-                Read insights
+                Read articles
               </Link>
             </div>
           </article>
