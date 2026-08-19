@@ -42,8 +42,8 @@ export function HomeHero() {
         <div className={styles.media}>
           <div className={styles.mediaFrame}>
             <Image
-              src={siteImages.puertoRico.src}
-              alt={siteImages.puertoRico.alt}
+              src={siteImages.beach.src}
+              alt={siteImages.beach.alt}
               fill
               priority
               sizes="(max-width: 900px) 100vw, 480px"
