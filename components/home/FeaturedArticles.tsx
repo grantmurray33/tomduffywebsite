@@ -13,13 +13,13 @@ export function FeaturedArticles() {
       <div className="container">
         <RevealOnScroll className={styles.header}>
           <div>
-            <p className="eyebrow">Tax insights</p>
+            <p className="eyebrow">Insights</p>
             <h2 id="featured-articles-heading" className={styles.title}>
-              Featured articles
+              Tax insights &amp; articles
             </h2>
           </div>
           <Link href="/articles" className={styles.viewAll}>
-            View all articles
+            View all insights
           </Link>
         </RevealOnScroll>
 

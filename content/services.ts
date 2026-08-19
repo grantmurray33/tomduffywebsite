@@ -65,6 +65,21 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: 'wealth-preservation',
+    title: 'Wealth Preservation',
+    shortTitle: 'Wealth',
+    description:
+      'Tax minimization and wealth preservation strategies tailored to each client.',
+    overview:
+      'Preparing tax returns is only a small part of our service; we focus on guiding clients through wealth preservation techniques and tax minimization strategies catered to each client\'s needs.',
+    highlights: [
+      'Tax minimization strategies tailored to each client',
+      'Wealth preservation techniques',
+      'Personal tax planning and compliance (individuals)',
+      'Business tax advice and tax minimization strategies',
+    ],
+  },
+  {
     slug: 'foreign-trust-services',
     title: 'Foreign Trust Services',
     shortTitle: 'Foreign Trusts',
@@ -82,6 +97,20 @@ export const services: Service[] = [
   },
 ];
 
+export const serviceListingOrder = [
+  'puerto-rico-tax-planning',
+  'domestic-tax-services',
+  'international-tax-services',
+  'wealth-preservation',
+  'foreign-trust-services',
+] as const;
+
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
+}
+
+export function getServicesInListingOrder(): Service[] {
+  return serviceListingOrder
+    .map((slug) => getServiceBySlug(slug))
+    .filter((service): service is Service => Boolean(service));
 }

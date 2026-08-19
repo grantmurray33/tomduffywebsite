@@ -1,8 +1,19 @@
 .hero {
-  padding-block: clamp(4rem, 10vw, 6rem);
-  border-bottom: 1px solid var(--color-border);
+  padding-block: clamp(4.25rem, 11vw, 6.75rem);
   position: relative;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-gold);
+  z-index: 3;
 }
 
 .background {
@@ -12,58 +23,68 @@
   pointer-events: none;
 }
 
-.hero > :global(.container) {
+.backgroundImage {
+  object-fit: cover;
+}
+
+.inner {
   position: relative;
-  z-index: 1;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent-line);
   z-index: 2;
+  max-width: var(--max-width-narrow);
 }
 
-.default .background {
-  background:
-    radial-gradient(ellipse 70% 60% at 20% 0%, rgba(184, 149, 106, 0.07), transparent),
-    linear-gradient(180deg, var(--color-primary-subtle) 0%, var(--color-bg-elevated) 100%);
-}
-
-.services .background {
-  background:
-    linear-gradient(105deg, rgba(247, 245, 242, 0.94) 0%, rgba(247, 245, 242, 0.88) 50%, rgba(238, 246, 248, 0.82) 100%),
-    url('/images/hero/hero-tax-planning.jpg') center / cover no-repeat;
-}
-
-.articles .background {
-  background:
-    linear-gradient(180deg, rgba(247, 245, 242, 0.95) 0%, rgba(247, 245, 242, 0.9) 60%, var(--color-bg-elevated) 100%),
-    url('/images/hero/hero-wealth.jpg') center 30% / cover no-repeat;
-}
-
-.contact .background {
-  background:
-    linear-gradient(135deg, rgba(22, 88, 100, 0.06) 0%, rgba(247, 245, 242, 0.96) 50%, var(--color-bg-elevated) 100%),
-    url('/images/hero/hero-puerto-rico.jpg') center / cover no-repeat;
-}
-
+.default .background,
 .about .background {
   background:
-    radial-gradient(ellipse 60% 50% at 80% 20%, rgba(184, 149, 106, 0.08), transparent),
+    radial-gradient(ellipse 70% 60% at 20% 0%, rgba(185, 138, 46, 0.1), transparent),
     linear-gradient(180deg, var(--color-primary-subtle) 0%, var(--color-bg-elevated) 100%);
+}
+
+.services .background::after,
+.articles .background::after,
+.contact .background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      108deg,
+      rgba(7, 21, 37, 0.92) 0%,
+      rgba(11, 38, 68, 0.8) 48%,
+      rgba(14, 52, 88, 0.62) 100%
+    );
+}
+
+.services,
+.articles,
+.contact {
+  color: #fff;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: var(--letter-label);
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.eyebrow::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  margin-top: 0.625rem;
+  background: var(--color-gold);
+  opacity: 0.7;
 }
 
 .title {
   font-size: var(--heading-1);
-  font-weight: 300;
+  font-weight: 500;
   margin-top: 1rem;
   max-width: 18ch;
-  letter-spacing: -0.03em;
 }
 
 .lead {
@@ -74,16 +95,22 @@
   max-width: 50ch;
 }
 
+.services .lead,
+.articles .lead,
+.contact .lead {
+  color: var(--color-text-on-dark-muted);
+}
+
 .quote {
   margin-top: 2.5rem;
   padding-top: 2.5rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid rgba(185, 138, 46, 0.28);
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   line-height: 1.55;
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
   position: relative;
 }
 
@@ -95,7 +122,7 @@
   font-size: 3rem;
   line-height: 1;
   color: var(--color-gold);
-  opacity: 0.35;
+  opacity: 0.45;
   font-style: normal;
 }
 

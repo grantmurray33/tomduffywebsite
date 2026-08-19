@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { firm, navLinks } from '@/content/site';
+import { firm, homeServiceCards, navLinks } from '@/content/site';
 import styles from './Footer.module.css';
 
 export function Footer() {
@@ -7,10 +7,6 @@ export function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className="container">
-        <hr className="divider" />
-      </div>
-
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
           <p className={styles.name}>{firm.name}</p>
@@ -29,10 +25,22 @@ export function Footer() {
           </ul>
         </nav>
 
+        <nav className={styles.nav} aria-label="Services">
+          <p className={styles.columnLabel}>Services</p>
+          <ul>
+            {homeServiceCards.map((card) => (
+              <li key={card.title}>
+                <Link href={card.href}>{card.title}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <div className={styles.contact}>
           <p className={styles.columnLabel}>Contact</p>
           <a href={firm.phoneHref}>{firm.phone}</a>
           <a href={`mailto:${firm.email}`}>{firm.email}</a>
+          <p className={styles.referral}>{firm.referralOnly}</p>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Source_Sans_3 } from 'next/font/google';
+import { Playfair_Display, Inter } from 'next/font/google';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { OrganizationJsonLd } from '@/components/seo/JsonLd';
@@ -7,14 +7,15 @@ import { firm } from '@/content/site';
 import { buildMetadata } from '@/lib/metadata';
 import './globals.css';
 
-const serif = Cormorant_Garamond({
+const serif = Playfair_Display({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   variable: '--font-serif-loaded',
   display: 'swap',
 });
 
-const sans = Source_Sans_3({
+const sans = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-sans-loaded',
@@ -26,6 +27,11 @@ export const metadata: Metadata = buildMetadata({
   description: firm.description,
   path: '/',
 });
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+} as const;
 
 export default function RootLayout({
   children,

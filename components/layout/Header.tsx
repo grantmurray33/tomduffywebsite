@@ -6,6 +6,11 @@ import { useState } from 'react';
 import { firm, navLinks } from '@/content/site';
 import styles from './Header.module.css';
 
+function isActive(pathname: string, href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -25,8 +30,7 @@ export function Header() {
                 <Link
                   href={link.href}
                   className={
-                    pathname === link.href ||
-                    pathname.startsWith(`${link.href}/`)
+                    isActive(pathname, link.href)
                       ? styles.navLinkActive
                       : styles.navLink
                   }
@@ -37,7 +41,7 @@ export function Header() {
             ))}
           </ul>
           <Link href="/contact" className={`btn btn--primary ${styles.cta}`}>
-            Contact
+            Request a Consultation
           </Link>
         </nav>
 
@@ -66,8 +70,7 @@ export function Header() {
             key={link.href}
             href={link.href}
             className={
-              pathname === link.href ||
-              pathname.startsWith(`${link.href}/`)
+              isActive(pathname, link.href)
                 ? styles.mobileLinkActive
                 : styles.mobileLink
             }
@@ -81,7 +84,7 @@ export function Header() {
           className={`btn btn--primary ${styles.mobileCta}`}
           onClick={() => setOpen(false)}
         >
-          Contact
+          Request a Consultation
         </Link>
       </nav>
     </header>

@@ -9,20 +9,20 @@ export function HomeServices() {
     <section className={styles.section} aria-labelledby="home-services-heading">
       <div className="container">
         <RevealOnScroll className={styles.header}>
-          <p className="eyebrow">What we do</p>
+          <p className="eyebrow">Practice areas</p>
           <h2 id="home-services-heading" className={styles.title}>
-            Comprehensive tax advisory
+            Six areas of focus
           </h2>
           <p className={styles.lead}>
-            We advise high-net-worth individuals and businesses on complex
-            domestic and international tax matters — with deep specialization in
-            Puerto Rico incentive planning and U.S. federal compliance.
+            Advisory for individuals and businesses with complex U.S. tax
+            matters — with particular depth in Puerto Rico Act 60 federal
+            compliance.
           </p>
         </RevealOnScroll>
 
         <ul className={styles.grid}>
           {homeServiceCards.map((card, index) => (
-            <RevealOnScroll key={card.href + card.title} as="li" delay={index * 80}>
+            <RevealOnScroll key={card.title} as="li" delay={index * 70}>
               <Link href={card.href} className={styles.card}>
                 <span className={styles.iconWrap}>
                   <ServiceIcon

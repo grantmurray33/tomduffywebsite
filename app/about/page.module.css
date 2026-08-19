@@ -2,49 +2,65 @@
   padding-block: var(--space-section);
   background: var(--color-bg-elevated);
   border-top: 1px solid var(--color-border);
+  position: relative;
+}
+
+.firmGrid {
+  display: grid;
+  gap: 3rem;
+  align-items: start;
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .firmGrid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 4.5rem;
+  }
 }
 
 .firmTitle {
   font-size: var(--heading-2);
-  font-weight: 300;
-  margin-bottom: 2rem;
-  letter-spacing: -0.02em;
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
 }
 
 .badges {
-  margin-block: 2.5rem;
+  margin-block: 2rem;
 }
 
 .paragraph {
   font-size: 1.0625rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--color-text-muted);
   margin-bottom: 1.5rem;
   max-width: 62ch;
 }
 
 .belief {
-  margin-top: 2.5rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--color-border);
+  margin-top: 2rem;
+  padding: 1.75rem 1.5rem 1.5rem;
+  border-left: 2px solid var(--color-gold);
+  background: var(--color-bg);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   font-family: var(--font-serif);
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  font-weight: 300;
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-weight: 400;
   font-style: italic;
   line-height: 1.55;
   color: var(--color-text);
   max-width: 58ch;
-  position: relative;
 }
 
-.belief::before {
-  content: '\201C';
-  position: absolute;
-  top: 1.75rem;
-  left: -0.125rem;
-  font-size: 3rem;
-  line-height: 1;
-  color: var(--color-gold);
-  opacity: 0.35;
-  font-style: normal;
+.firmVisual {
+  max-width: 26rem;
+  min-width: 0;
+}
+
+@media (min-width: 900px) {
+  .firmVisual {
+    position: sticky;
+    top: calc(var(--header-height) + 1.25rem);
+    max-width: none;
+  }
 }

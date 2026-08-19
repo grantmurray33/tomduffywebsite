@@ -14,11 +14,46 @@ export const firm = {
 } as const;
 
 export const navLinks = [
+  { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '/articles', label: 'Articles' },
+  { href: '/articles', label: 'Insights' },
   { href: '/contact', label: 'Contact' },
 ] as const;
+
+export const homeFacts = [
+  {
+    value: 'Since 2012',
+    label: 'Act 60 federal compliance guidance',
+  },
+  {
+    value: 'IL & FL',
+    label: 'Licensed CPA in Illinois and Florida',
+  },
+  {
+    value: 'Referral only',
+    label: 'Currently accepting new clients by referral',
+  },
+] as const;
+
+export const whyWorkWithTom = {
+  eyebrow: 'The practice',
+  title: 'Why work with Tom',
+  lead: 'A lean, highly specialized boutique focused on the federal compliance dimensions of Puerto Rico’s Act 60 incentive regime — with senior-level attention on every engagement.',
+  items: [
+    'Act 60 federal tax compliance guidance since 2012',
+    'CPA licensed in Illinois and Florida',
+    'Proactive planning across filings, disclosures, and related-entity reporting',
+    'Direct access to Tom — senior-level attention, not a staff rotation',
+    'Coordinates with existing accountants, tax counsel, and family offices',
+    'Published in Tax Notes, Bloomberg Tax, The Journal of Taxation, and The Journal of International Taxation',
+  ],
+} as const;
+
+export const clientTestimonialPlaceholder = {
+  quote: '{{CLIENT_TESTIMONIAL}}',
+  attribution: '{{CLIENT_NAME_AND_ROLE}}',
+} as const;
 
 export const homeQuote = {
   text: 'Anyone may so arrange his affairs that his taxes shall be as low as possible; he is not bound to choose that pattern which will best pay the Treasury; there is not even a patriotic duty to increase one\'s taxes…',
@@ -35,6 +70,25 @@ export const tomDuffyPhoto = {
   alt: 'Tom Duffy, Certified Public Accountant and founder of Tom Duffy, CPA, P.A. & P.C.',
   width: 600,
   height: 800,
+} as const;
+
+export const siteImages = {
+  puertoRico: {
+    src: '/images/hero/hero-puerto-rico.jpg',
+    alt: 'Coastline in Puerto Rico at golden hour',
+  },
+  taxPlanning: {
+    src: '/images/hero/hero-tax-planning.jpg',
+    alt: 'Architectural detail used as a visual for tax planning',
+  },
+  wealth: {
+    src: '/images/hero/hero-wealth.jpg',
+    alt: 'Coastal landscape used as a visual for wealth preservation',
+  },
+  beach: {
+    src: '/beach.jpg',
+    alt: 'Shoreline landscape',
+  },
 } as const;
 
 export const aboutTom = {
@@ -67,39 +121,6 @@ Puerto Rico tax incentives may begin in Puerto Rico. For U.S. persons, their suc
   ] as const,
 } as const;
 
-export const homeHeroSlides = [
-  {
-    id: 'puerto-rico',
-    eyebrow: 'Puerto Rico Tax Planning',
-    headline: 'Navigate Act 60 with confidence',
-    description:
-      'Specialized guidance for bona fide residency, U.S. federal compliance, and Puerto Rico incentive planning — from one of the few firms focused on this complex intersection.',
-    cta: { label: 'Puerto Rico services', href: '/services/puerto-rico-tax-planning' },
-    image: '/images/hero/hero-puerto-rico.jpg',
-    imagePosition: 'center 40%',
-  },
-  {
-    id: 'tax-minimization',
-    eyebrow: 'Tax Minimization Strategies',
-    headline: 'Lawful planning for complex tax matters',
-    description:
-      'Creative planning and consulting for domestic and international tax minimization — tailored strategies for high-net-worth individuals and businesses.',
-    cta: { label: 'Explore our services', href: '/services' },
-    image: '/images/hero/hero-tax-planning.jpg',
-    imagePosition: 'center 50%',
-  },
-  {
-    id: 'wealth-preservation',
-    eyebrow: 'Wealth Preservation Consulting',
-    headline: 'Preserve what you have built',
-    description:
-      'We guide clients through wealth preservation techniques, compliance, and representation — with deep expertise in U.S. tax obligations at home and abroad.',
-    cta: { label: 'About the firm', href: '/about' },
-    image: '/images/hero/hero-wealth.jpg',
-    imagePosition: 'center 45%',
-  },
-] as const;
-
 export const firmAffiliations = [
   { abbr: 'CPA', label: 'Certified Public Accountant' },
   { abbr: 'AICPA', label: 'American Institute of CPAs' },
@@ -112,35 +133,35 @@ export const homeServiceCards = [
     title: 'Puerto Rico Tax Services',
     description:
       'Act 60 planning, bona fide residency, and IRS representation for residents of Puerto Rico.',
-    href: '/services/puerto-rico-tax-planning',
+    href: '/services#puerto-rico-tax-planning',
     icon: 'puerto-rico' as const,
   },
   {
     title: 'Domestic Tax Services',
     description:
       'Federal tax planning, compliance, and representation for individuals and businesses.',
-    href: '/services/domestic-tax-services',
+    href: '/services#domestic-tax-services',
     icon: 'domestic' as const,
   },
   {
     title: 'International Tax Planning',
     description:
       'Cross-border planning, treaty analysis, and compliance for global operations.',
-    href: '/services/international-tax-services',
+    href: '/services#international-tax-services',
     icon: 'international' as const,
   },
   {
     title: 'Wealth Preservation',
     description:
       'Tax minimization and wealth preservation strategies tailored to each client.',
-    href: '/services',
+    href: '/services#wealth-preservation',
     icon: 'wealth' as const,
   },
   {
     title: 'Foreign Trust Services',
     description:
       'Foreign trust reporting, grantor trust compliance, and related U.S. disclosures.',
-    href: '/services/foreign-trust-services',
+    href: '/services#foreign-trust-services',
     icon: 'trust' as const,
   },
   {

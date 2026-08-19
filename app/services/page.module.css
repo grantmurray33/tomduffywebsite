@@ -3,42 +3,75 @@
 }
 
 .item {
+  display: grid;
+  gap: 1.25rem;
+  padding-block: 3.25rem;
   border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: calc(var(--header-height) + 1.25rem);
+  min-width: 0;
 }
 
-.item a {
-  display: block;
-  padding-block: 3rem;
-  padding-inline: 1rem;
-  margin-inline: -1rem;
-  border-radius: var(--radius-md);
-  transition:
-    background var(--transition-fast),
-    box-shadow var(--transition-fast),
-    transform var(--transition-fast),
-    border-color var(--transition-fast);
-  border: 1px solid transparent;
+.item:first-child {
+  padding-top: 0;
 }
 
-.item a:hover {
-  background: var(--color-bg-elevated);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-  border-color: var(--color-gold);
+.item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
-.item h2 {
-  font-size: clamp(1.625rem, 3vw, 2.125rem);
-  font-weight: 400;
-  margin-bottom: 0.875rem;
+.index {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--color-gold);
+}
+
+.title {
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: 500;
+  margin-bottom: 0.85rem;
   letter-spacing: -0.02em;
 }
 
-.item p {
-  color: var(--color-text-muted);
+.description {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-text);
   max-width: 58ch;
-  margin-bottom: 1.25rem;
-  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.overview {
+  color: var(--color-text-muted);
+  max-width: 62ch;
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.highlights {
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: 1.75rem;
+  max-width: 52rem;
+}
+
+.highlights li {
+  position: relative;
+  padding-left: 1.15rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+.highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.45rem;
+  height: 1px;
+  background: var(--color-gold);
 }
 
 .link {
@@ -50,6 +83,20 @@
   transition: color var(--transition-base);
 }
 
-.item a:hover .link {
-  color: var(--color-accent);
+.link:hover {
+  color: var(--color-primary);
+}
+
+@media (min-width: 800px) {
+  .item {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 2.5rem;
+    align-items: start;
+    padding-block: 3.75rem;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem 2rem;
+  }
 }

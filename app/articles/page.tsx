@@ -25,10 +25,14 @@ export default function ArticlesPage() {
       />
 
       <section className={styles.list} aria-label="Article listing">
-        <div className="container container--narrow">
-          {allArticles.map((article) => (
-            <ArticleCard key={article.slug} article={article} />
-          ))}
+        <div className="container">
+          <ul className={styles.grid}>
+            {allArticles.map((article) => (
+              <li key={article.slug}>
+                <ArticleCard article={article} />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

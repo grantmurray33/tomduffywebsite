@@ -1,0 +1,28 @@
+.section {
+  padding-block: clamp(5rem, 12vw, 8rem);
+}
+
+.title {
+  font-size: var(--heading-1);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.text {
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  max-width: 46ch;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+@media (max-width: 639px) {
+  .actions {
+    flex-direction: column;
+  }
+}
